@@ -5,7 +5,7 @@ The mechanism is simple and the tool very powerful.
 
 ## 1) Datasets (Tensor notation and manipulation)
 
-#### All console commands (to be extended):
+### All console commands (to be extended):
 ---
 __Create__ a new dataset where mydataset is its name:
 
@@ -39,7 +39,7 @@ __(TBD) Visual edit__ of your dataset:
 
 	dataset visualedit mydataset
  
-#### Dataset structure:
+### Dataset structure:
 ---
 Different from a standard matrix form, we use labels at three neighboring edges and on three neiboring surrounding planes. Like a dictionary, you can access its content, by using those parameters, just a bit more difficult.
 For computation speed purposes, the data is stored in index-notation.
@@ -51,7 +51,7 @@ Example of a structure of a standard dataset:
 Where A, B, C, X, Y, Z, 1, 2, 3 are any variables.
 Access of this matrix is explained later.
 
-#### Example for crawl-tensors: 
+### Example for crawl-tensors: 
 ---
 
 Example of a structure of a dataset that can be used for crawling:
@@ -83,7 +83,7 @@ or a combination
 
 Important Note: From this notation, __C_URL__ is not an edge label. To access a value with a plane label, you have to use {} brackets like in the example above.
 
-#### Dataset storage in .json format:
+### Dataset storage in .json format:
 ---
 As mentioned before, data is stored in index notation (mainly for computation speed purposes and simplicity in transformations). For identification purposes, data is stored as .tensor.json.
 
@@ -112,7 +112,7 @@ As mentioned before, data is stored in index notation (mainly for computation sp
 	
 	]
 
-#### Special behavior of tensors:
+### Special behavior of tensors:
 ---
 There are multiple uncommon behaviors, that need to be mentioned in order to understand these tensors well.
 
@@ -126,12 +126,12 @@ There are multiple uncommon behaviors, that need to be mentioned in order to und
 
 ## 2) Crawler workflow and cell notation
 
-#### Commands
+### Commands
 ---
 __Crawl with__ a dataset:
 	``crawlwith mydataset``
 
-#### Workflow
+### Workflow
 ---
 A dataset has to have the following __minimum requirements__ for it to work:
 - The single web requests must be listed as an iteration of the third coordinate.
@@ -143,7 +143,7 @@ The crawler goes through the following steps:
 - Write response parameters in the pre-defined cells.
 - Continue to next request.
 
-#### Structure of a crawler-dataset
+### Structure of a crawler-dataset
 ___
 
 For illustration purposes, this documentation shows the tensor split in matrices, by the first coordinate:
