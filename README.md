@@ -90,27 +90,36 @@ As mentioned before, data is stored in index notation (mainly for computation sp
 ``mydata.tensor.json``
 
 	[
-		# EDGE LABELS
-		[0, -1, -1, “CRAWL_PARAMS“],
-		[1, -1, -1, “CRAWL_ARGS“],
-		
-		# PLANE LABELS
-		[0, 0, -1, “C_TYPE“],
-		[0, 1, -1, “C_URL“]
-		[0 2, -1, “C_CONTYPE“],
-		[0, 3, -1, “C_REDIRECT“],
-		[1, 0, -1, “username“],
-		[1, 1, -1, “password“],
-		
-		# CONTENT
-		[0, 0, 0, “POST“],
-		[0, 1, 0, “http://…“],
-		(0, 2, 0, “application/x…“],
-		[0, 3, 0, 1],
-		[1, 0, 0, “admin“],
-		[1, 1, 0, “123456“]
+	  # EDGE LABELS
+	  [0, -1, -1, "CRAWL_PARAMS"],
+	  [1, -1, -1, "CRAWL_ARGS"],
+	  [2, -1, -1, "CRAWL_COOKIES"],
+	  [3, -1, -1, "CRAWL_RESP"],
 	
+	  # PLANE LABELS
+	  [0, 0, -1, "C_TYPE"],
+	  [0, 1, -1, "C_URL"],
+	  [0, 2, -1, "C_CONTYPE"],
+	  [0, 3, -1, "C_REDIRECT"],
+	  [0, 4, -1, "C_REPEAT"],
+	
+	  [1, 0, -1, "example_argument"],
+	  [2, 0, -1, "example_cookie"],
+	
+	  [3, 0, -1, "R_STATUS"],
+	  [3, 1, -1, "R_TEXT"],
+	  [3, 2, -1, "R_URL"]
+	
+	  # DATA
+	  [0, 0, 0, "s:POST"],
+	  [0, 1, 0, "s:https://example.com"],
+	  [0, 2, 0, "s:application/x-form-urlencoded"],
+	  [0, 3, 0, "s:1"],
+	  [0, 4, 0, "s:"],
+	  [1, 0, 0, "s:example_value"],
+	  [2, 0, 0, "s:example_cookie_value"]
 	]
+
 
 ### Special behavior of tensors:
 ---
