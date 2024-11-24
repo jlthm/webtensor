@@ -68,7 +68,7 @@ Example of a structure of a dataset that can be used for crawling:
 
 ![Tensor set 2](docs/tensor_example2.jpg)
 
-#### Accessing values:
+### Accessing values:
 ---
 Example for accessing the value ’url‘ with its labels:
 
