@@ -18,11 +18,11 @@
   [3, 1, -1, "text"],
   [3, 2, -1, "url"],
 
-  [0, 0, 0, "POST"],
-  [0, 1, 0, "https://example.com"],
-  [0, 2, 0, "application/x-form-urlencoded"],
-  [0, 3, 0, 1],
-  [0, 4, 0, 0],
-  [1, 0, 0, "example_value"],
-  [2, 0, 0, "example_cookie_value"]
+  [0, 0, 0, "s:POST"],
+  [0, 1, 0, "s:https://example.com"],
+  [0, 2, 0, "s:application/x-form-urlencoded"],
+  [0, 3, 0, "s:1"],
+  [0, 4, 0, "s:"],
+  [1, 0, 0, "s:example_value"],
+  [2, 0, 0, "s:example_cookie_value"]
 ]
