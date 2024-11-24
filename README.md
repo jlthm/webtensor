@@ -46,14 +46,7 @@ For computation speed purposes, the data is stored in index-notation.
 
 Example of a structure of a standard dataset:
 
-|        __X__       |
-   |        __Y__       | 
-    |        __Z__       |
-               |       __A__      |       __B__      |     __C__      |     __D__      |      __E__      |   …
-       |       __1__       |
-       |       __2__       |
-       |       __3__       |
-       …
+
 
 Where A, B, C, X, Y, Z, 1, 2, 3 are any variables.
 Access of this matrix is explained later.
