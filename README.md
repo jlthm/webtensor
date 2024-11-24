@@ -46,7 +46,7 @@ For computation speed purposes, the data is stored in index-notation.
 
 Example of a structure of a standard dataset:
 
-
+![Tensor Structure](docs/tensor_structure.jpg)
 
 Where A, B, C, X, Y, Z, 1, 2, 3 are any variables.
 Access of this matrix is explained later.
@@ -62,15 +62,11 @@ Example of a structure of a dataset that can be used for crawling:
 
 ``dataset extract mydataset[“CRAWL_PARAMS“][][] —-out=myextracteddata.csv``
 
-__CRAWL_PARAMS__ (A):
-|                |       __{C_TYPE}___     |     __{C_URL}__    |          __{C_CONTYPE}__          |      __{C_REDIRECT}__     |
-|    __req1__    |          POST          |     http://…      |          application/x-...        |                  1                  |
+![Tensor set 1](docs/tensor_example1.jpg)
 
 ``dataset extract mydataset[“CRAWL_ARGS“][][] —-out=myextracteddata.csv``
 
-__CRAWL_ARGS__ (B):
-|                |     __{username}__   |     __{password}__    |      __NULL__     |      __NULL__     |
-|    __req1__    |          admin         |        123456        |      NULL     |      NULL     |
+![Tensor set 2](docs/tensor_example2.jpg)
 
 #### Accessing values:
 ---
@@ -153,25 +149,16 @@ ___
 For illustration purposes, this documentation shows the tensor split in matrices, by the first coordinate:
 
 __[0] CRAWL_PARAMS__:
-|                |    __{C_TYPE}___  |     __{C_URL}__    |  __{C_CONTYPE}__    |  __{C_REDIRECT}__ | __{C_REPEAT}__ |
-
-|    __req1__    |       POST       |     http://…      |  application/x-...  |              1              |           1            |
+![Tensor set 1](docs/tensor_example1.jpg)
 
 __[1] CRAWL_ARGS__:
-|                |     __{username}__   |     __{password}__    |      __NULL__     |      __NULL__     |
-
-|    __req1__    |          admin         |        123456        |      NULL     |      NULL     |
+![Tensor set 2](docs/tensor_example2.jpg)
 
 __[2] CRAWL_COOKIES__:
-|                |              __{PHPSESS}__          |     __NULL__     |      __NULL__     |      __NULL__     |
-
-|    __req1__    |          k345h9rgjbsdf         |     NULL     |      NULL     |      NULL     |
+![Tensor set 3](docs/tensor_example3.jpg)
 
 __[3] CRAWL_RESP__:
-|                |     __{status}__   |     __{text}__    |        __{url}__        |      __NULL__     |
-
-|    __req1__    |        200        |   \<html\>..  |    https://…    |      NULL     |
-
+![Tensor set 4](docs/tensor_example4.jpg)
 
 #### Cell notation and pre-processing
 ---
