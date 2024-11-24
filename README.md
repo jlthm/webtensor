@@ -72,7 +72,7 @@ Example of a structure of a dataset that can be used for crawling:
 ---
 Example for accessing the value ’url‘ with its labels:
 
-``matrix[“CRAWL_PARAMS“]{“C_URL“}[“req1“]``
+``matrix[“CRAWL_PARAMS“]@[“C_URL“][“req1“]``
 
 alternatively with indices
 ``matrix[1][2][1]``
@@ -81,7 +81,7 @@ or a combination
 ``matrix[1][2][“req1“]``
 
 
-Important Note: From this notation, __C_URL__ is not an edge label. To access a value with a plane label, you have to use {} brackets like in the example above.
+Important Note: From this notation, __C_URL__ is not an edge label. To access a value with a plane label, you have to use @[...] brackets like in the example above.
 
 ### Dataset storage in .json format:
 ---
@@ -116,12 +116,14 @@ As mentioned before, data is stored in index notation (mainly for computation sp
 ---
 There are multiple uncommon behaviors, that need to be mentioned in order to understand these tensors well.
 
-	- tensor[2]{‘data‘}[3] 
+	- tensor[2]@[‘data‘][3] 
 	If ‘data‘ is not a plane label yet, a plane label will be created, as long as there are enough free ones. This behavior is similar to dict-objects.
-	- tensor.size(), gives a list object [1, 7, 4] with the number of instances in each direction.
+	- len(tensor), gives a list object [1, 7, 4] with the number of instances in each direction.
 	- tensor[3][][] gives back a LIST object (!) in form of a matrix (list in lists). This has the effect, that it can be converted more easily into csv…
 	- tensor[3][4][-1] gives back a plane LABEL
-	- tensor[1,3,25] extends a [1,1,1] tensor to a size of [1,3,25]
+	- tensor[1][3][25] extends a [1,1,1] tensor to a size of [1,3,25]
+ - tensor[1][3] is an invalid notation and will raise an error. Notation like that may be possible in an
+ future update.
 	
 
 ## 2) Crawler workflow and cell notation
