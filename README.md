@@ -116,22 +116,27 @@ As mentioned before, data is stored in index notation (mainly for computation sp
 ---
 There are multiple uncommon behaviors, that need to be mentioned in order to understand these tensors well.
 
-``tensor[2]@[‘data‘][3]``
+- ``tensor[2]@[‘data‘][3]``
+
 If ‘data‘ is not a plane label yet, a plane label will be created, as long as there are enough free ones. This behavior is similar to dict-objects.
 
-``len(tensor)``
+- ``len(tensor)``
+
 Gives back a list object [1, 7, 4] with the number of instances in each direction.
 
-``tensor[3][][]``
+- ``tensor[3][][]``
+
 Gives back a LIST object (!) in form of a matrix (list in lists). This has the effect, that it can be converted more easily into csv and other common data formats.
 
-``tensor[3][4][-1]``
+- ``tensor[3][4][-1]``
+
 Gives back a plane LABEL.
 
-``tensor[1][3][25]``
+- ``tensor[1][3][25]``
+
 Extends a [1,1,1] tensor to a size of [1,3,25].
 
-``tensor[1][3]``
+- ``tensor[1][3]``
 Is an invalid notation and will raise an error. Notation like that may be possible in a future update.
 
 
@@ -141,7 +146,7 @@ Is an invalid notation and will raise an error. Notation like that may be possib
 ---
 __Crawl with__ a dataset:
 
-	``crawlwith mydataset``
+	crawlwith mydataset
 
 ### Workflow:
 ---
