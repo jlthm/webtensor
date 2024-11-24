@@ -116,24 +116,28 @@ As mentioned before, data is stored in index notation (mainly for computation sp
 ---
 There are multiple uncommon behaviors, that need to be mentioned in order to understand these tensors well.
 
-	- tensor[2]@[‘data‘][3] 
-	If ‘data‘ is not a plane label yet, a plane label will be created, as long as there are enough free ones. This behavior is similar to dict-objects.
-	- len(tensor), gives a list object [1, 7, 4] with the number of instances in each direction.
-	- tensor[3][][] gives back a LIST object (!) in form of a matrix (list in lists). This has the effect, that it can be converted more easily into csv…
-	- tensor[3][4][-1] gives back a plane LABEL
-	- tensor[1][3][25] extends a [1,1,1] tensor to a size of [1,3,25]
- - tensor[1][3] is an invalid notation and will raise an error. Notation like that may be possible in an
- future update.
+ - ˋtensor[2]@[‘data‘][3]ˋ
+   If ‘data‘ is not a plane label yet, a plane label will be created, as long as there are enough free ones. This behavior is similar to dict-objects.
+	- ˋlen(tensor)ˋ
+   Gives back a list object [1, 7, 4] with the number of instances in each direction.
+	- ˋtensor[3][][]ˋ
+   Gives back a LIST object (!) in form of a matrix (list in lists). This has the effect, that it can be converted more easily into csv and other common data formats.
+	- ˋtensor[3][4][-1]ˋ
+   Gives back a plane LABEL.
+	- ˋtensor[1][3][25]ˋ
+   Extends a [1,1,1] tensor to a size of [1,3,25].
+ - ˋtensor[1][3]ˋ
+   Is an invalid notation and will raise an error. Notation like that may be possible in a future update.
 	
 
 ## 2) Crawler workflow and cell notation
 
-### Commands
+### Commands:
 ---
 __Crawl with__ a dataset:
 	``crawlwith mydataset``
 
-### Workflow
+### Workflow:
 ---
 A dataset has to have the following __minimum requirements__ for it to work:
 - The single web requests must be listed as an iteration of the third coordinate.
@@ -145,7 +149,7 @@ The crawler goes through the following steps:
 - Write response parameters in the pre-defined cells.
 - Continue to next request.
 
-### Structure of a crawler-dataset
+### Structure of a crawler-dataset:
 ___
 
 For illustration purposes, this documentation shows the tensor split in matrices, by the first coordinate:
@@ -162,7 +166,7 @@ __[2] CRAWL_COOKIES__:
 __[3] CRAWL_RESP__:
 ![Tensor set 4](docs/tensor_example4.jpg)
 
-#### Cell notation and pre-processing
+### Cell notation and pre-processing:
 ---
 
 > _Note that the following methods restrict the full capability of this datatype, but with the price of great simplicity._
