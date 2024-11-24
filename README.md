@@ -46,7 +46,7 @@ For computation speed purposes, the data is stored in index-notation.
 
 Example of a structure of a standard dataset:
 
-![Tensor Structure](docs/tensor_structure.jpg)
+![Tensor Structure](docs/tensor_structure.png)
 
 Where A, B, C, X, Y, Z, 1, 2, 3 are any variables.
 Access of this matrix is explained later.
