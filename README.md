@@ -116,8 +116,8 @@ As mentioned before, data is stored in index notation (mainly for computation sp
 ---
 There are multiple uncommon behaviors, that need to be mentioned in order to understand these tensors well.
 
-	tensor[2]@[‘data‘][3]
-	If ‘data‘ is not a plane label yet, a plane label will be created, as long as there are enough free ones. This behavior is similar to dict-objects.
+ˋˋtensor[2]@[‘data‘][3]ˋˋ
+If ‘data‘ is not a plane label yet, a plane label will be created, as long as there are enough free ones. This behavior is similar to dict-objects.
 
 	len(tensor)
 	Gives back a list object [1, 7, 4] with the number of instances in each direction.
