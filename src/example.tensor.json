@@ -11,12 +11,12 @@
   [0, 4, -1, "C_REPEAT"],
 
   [1, 0, -1, "example_argument"],
-
   [2, 0, -1, "example_cookie"],
 
-  [3, 0, -1, "status"],
-  [3, 1, -1, "text"],
-  [3, 2, -1, "url"],
+  [3, 0, -1, "R_STATUS"],
+  [3, 1, -1, "R_TEXT"],
+  [3, 2, -1, "R_URL"]
+
 
   [0, 0, 0, "s:POST"],
   [0, 1, 0, "s:https://example.com"],
