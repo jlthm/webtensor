@@ -15,11 +15,11 @@
 
   [3, 0, -1, "R_STATUS"],
   [3, 1, -1, "R_TEXT"],
-  [3, 2, -1, "R_URL"]
+  [3, 2, -1, "R_URL"],
 
 
-  [0, 0, 0, "s:POST"],
-  [0, 1, 0, "s:https://example.com"],
+  [0, 0, 0, "s:GET"],
+  [0, 1, 0, "s:https://example.org"],
   [0, 2, 0, "s:application/x-form-urlencoded"],
   [0, 3, 0, "s:1"],
   [0, 4, 0, "s:"],
