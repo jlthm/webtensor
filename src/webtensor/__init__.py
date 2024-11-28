@@ -4,8 +4,8 @@ from .console import Console
 from .dataset import Dataset
 from .crawl import Crawler
 
-__author__ = "Julian Bauer"
-__maintainer__ = "Julian Bauer"
+__author__ = "jlthm"
+__maintainer__ = "jlthm"
 __status__ = "Production"
 __version__="1.0.1"
 
