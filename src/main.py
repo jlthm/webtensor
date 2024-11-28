@@ -25,5 +25,5 @@ if not sys.argv[-1].endswith(".py"):
     print("This module takes no arguments.")
     exit()
 
-console = webtensor.Console("afc144")
+console = webtensor.Console("webtensor")
 console.run()
