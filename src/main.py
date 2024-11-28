@@ -8,20 +8,14 @@ __maintainer__ = "jlthm""
 __status__ = "Production"
 
 '''
-This console-based application allows specific and automated access to
-parts of the data provided by ems-services in lower austria.
-
-The application uses 3 submodules:
-    - ac144_console.py to provide a program interface
-    - ac144_session.py is used to create network connections to the 
-        relevant services
-    - ac144_set.py is used to convert the gathered data into readable
-        formats
+This console-based application allows recursive web-crawling with level 3 tensors.
+The datatype tensor acts like a multidimensional dictionary.
+Requests are an iteration of the third axis. For detailed information see github @jlthm/webtensor
 
 '''
 
 if not sys.argv[-1].endswith(".py"):
-    print("This module takes no arguments.")
+    print("This script takes no arguments.")
     exit()
 
 console = webtensor.Console("webtensor")
