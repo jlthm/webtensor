@@ -190,7 +190,7 @@ class Dataset:
             for i in self.data:
                 if i[:3] == c:
                     return i[3]
-            raise KeyError("Index not in Tensor")
+            raise KeyError("Index {0} not in Tensor".format(str(c)))
 
         elif orientation == [False, False, False]:
             return self._matrix()

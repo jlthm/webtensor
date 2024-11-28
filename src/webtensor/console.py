@@ -141,6 +141,41 @@ class CMgr:
                 [self._as_color("Object not found.", color="red")]
             ]
 
+    def dataset_list(self, args):
+        # Parse arguments and check requirements
+        pargs = self._get_pargs(args, inspect.stack()[0][3].count("_"))
+        if pargs == False:
+            return [
+                [self._as_color("Command failed: Could not interpret input:", color="red")],
+                [],
+                ["> " + " ".join(args)],
+                [],
+                [self._as_color("Please check required arguments or call 'help'.", color="orange")]
+            ]
+
+        _min_reqs = []
+
+        for r in _min_reqs:
+            if r not in pargs:
+                return [
+                    [self._as_color("Command failed: This command is missing an argument:", color="red")],
+                    [],
+                    ["> " + " ".join(args)],
+                    [],
+                    [self._as_color("Please check required arguments or call 'help'.", color="orange")]
+                ]
+
+        output = []
+        c = 1
+        for k in self._datasets:
+            output += [["- Dataset {1}: {0}".format(k, str(c))]]
+            c += 1
+        
+        if output == []:
+            return [[self._as_color("No datasets created yet.", color="orange")]]
+        else:
+            return [[self._as_color("The following datasets exist:", color="orange")]] + output
+
     def dataset_set(self, args):
         # Parse arguments and check requirements
         pargs = self._get_pargs(args, inspect.stack()[0][3].count("_"))
