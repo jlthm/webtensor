@@ -1,0 +1,28 @@
+[
+  [0, -1, -1, "CRAWL_PARAMS"],
+  [1, -1, -1, "CRAWL_ARGS"],
+  [2, -1, -1, "CRAWL_COOKIES"],
+  [3, -1, -1, "CRAWL_RESP"],
+
+  [0, 0, -1, "C_TYPE"],
+  [0, 1, -1, "C_URL"],
+  [0, 2, -1, "C_CONTYPE"],
+  [0, 3, -1, "C_REDIRECT"],
+  [0, 4, -1, "C_REPEAT"],
+
+  [1, 0, -1, "example_argument"],
+  [2, 0, -1, "example_cookie"],
+
+  [3, 0, -1, "R_STATUS"],
+  [3, 1, -1, "R_TEXT"],
+  [3, 2, -1, "R_URL"],
+
+
+  [0, 0, 0, "s:GET"],
+  [0, 1, 0, "s:https://example.org"],
+  [0, 2, 0, "s:application/x-form-urlencoded"],
+  [0, 3, 0, "s:1"],
+  [0, 4, 0, "s:"],
+  [1, 0, 0, "s:example_value"],
+  [2, 0, 0, "s:example_cookie_value"]
+]

@@ -213,12 +213,13 @@ The function of the keyword or keyletter in front of the actual value determines
   s (set) uses the variables as it is
 - ``i:[string]``
   i (input) requests an input during the crawl process and stores the value at that cell. The use case of that is mainly for 2FA.
-- ``r:r:[a,b,c]:[string]``
+- ``r:r:[a,b,c]:[regex]``
   r (regular expression) calls a regex-search-group operation on a previous cell (relative distance)
-- ``r:a:[a,b,c]:[string]``
+- ``r:a:[a,b,c]:[regex]``
   r (regular expression) calls a regex-search-group operation on a previous cell (relative distance)
 - ``d:[%d-%m-%Y]``
   d (date) stores the current date in the given format
 - ``p:r/a:[a,b,c]``
-  p (print) writes a specific value at runtime to the console
-
+  o (print) writes a specific value at runtime to the console
+- ``p:r/a:[a,b,c]:[x,y,z]:[regex]``
+  p (projection) Applies regex on a cell [a, b, c] and writes it to [x,y,z]
