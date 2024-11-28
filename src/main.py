@@ -3,9 +3,8 @@ import sys
 
 import webtensor
 
-__author__ = "Julian Bauer"
-__maintainer__ = "Julian Bauer"
-__email__ = "julian.bauer@n.roteskreuz.at"
+__author__ = "jlthm"
+__maintainer__ = "jlthm""
 __status__ = "Production"
 
 '''
