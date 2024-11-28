@@ -67,11 +67,11 @@ Example of a structure of a dataset that can be used for crawling:
 
 ``dataset extract mydataset[“CRAWL_PARAMS“][][] —-out=myextracteddata.csv``
 
-![Tensor set 1](docs/tensor_example1.jpg)
+![Tensor set 1](docs/tensor_example1.png)
 
 ``dataset extract mydataset[“CRAWL_ARGS“][][] —-out=myextracteddata.csv``
 
-![Tensor set 2](docs/tensor_example2.jpg)
+![Tensor set 2](docs/tensor_example2.png)
 
 ### Accessing values:
 
@@ -188,16 +188,16 @@ The crawler goes through the following steps:
 For illustration purposes, this documentation shows the tensor split in matrices, by the first coordinate:
 
 __[0] CRAWL_PARAMS__:
-![Tensor set 1](docs/tensor_example1.jpg)
+![Tensor set 1](docs/tensor_example1.png)
 
 __[1] CRAWL_ARGS__:
-![Tensor set 2](docs/tensor_example2.jpg)
+![Tensor set 2](docs/tensor_example2.png)
 
 __[2] CRAWL_COOKIES__:
-![Tensor set 3](docs/tensor_example3.jpg)
+![Tensor set 3](docs/tensor_example3.png)
 
 __[3] CRAWL_RESP__:
-![Tensor set 4](docs/tensor_example4.jpg)
+![Tensor set 4](docs/tensor_example4.png)
 
 ### Cell notation and pre-processing:
 
