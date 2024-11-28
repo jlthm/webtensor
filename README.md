@@ -219,3 +219,6 @@ The function of the keyword or keyletter in front of the actual value determines
   r (regular expression) calls a regex-search-group operation on a previous cell (relative distance)
 - ``d:[%d-%m-%Y]``
   d (date) stores the current date in the given format
+- ``p:r/a:[a,b,c]``
+  p (print) writes a specific value at runtime to the console
+
