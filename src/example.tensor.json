@@ -20,7 +20,7 @@
 
   [0, 0, 0, "s:GET"],
   [0, 1, 0, "s:https://example.org"],
-  [0, 2, 0, "s:application/x-form-urlencoded"],
+  [0, 2, 0, "s:application/x-www-form-urlencoded"],
   [0, 3, 0, "s:1"],
   [0, 4, 0, "s:"],
   [1, 0, 0, "s:example_value"],
