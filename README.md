@@ -219,7 +219,7 @@ The function of the keyword or keyletter in front of the actual value determines
   r (regular expression) calls a regex-search-group operation on a previous cell (relative distance)
 - ``d:[%d-%m-%Y]``
   d (date) stores the current date in the given format
-- ``p:r/a:[a,b,c]``
-  o (print) writes a specific value at runtime to the console
+- ``o:r/a:[a,b,c]``
+  o (out) writes a specific value at runtime to the console
 - ``p:r/a:[a,b,c]:[x,y,z]:[regex]``
   p (projection) Applies regex on a cell [a, b, c] and writes it to [x,y,z]
