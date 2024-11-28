@@ -17,6 +17,10 @@ __Remove__ a new dataset where mydataset is its name:
 
     dataset remove mydataset
 
+__List__ datasets:
+
+    dataset list
+
 __Set__ data in your dataset:
 
     dataset set mydataset --index=1,2,3 --value=word
