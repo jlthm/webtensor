@@ -7,7 +7,7 @@ import itertools
 import datetime
 import re
 import requests
-from lxml import html
+from lxml import html, etree
 
 
 __author__ = "jlthm"
@@ -225,7 +225,8 @@ class Crawler:
             elif operator == "x":
                 suboperator = prevalue[prevalue.replace(':', '-', 0).find(":")+1:prevalue.replace(':', '-', 1).find(":")]
                 indices1 = prevalue[prevalue.replace(':', '-', 1).find(":")+1:prevalue.replace(':', '-', 2).find(":")][1:-1].split(",")
-                xp = prevalue[prevalue.replace(':', '-', 2).find(":")+1:]
+                xp = prevalue[prevalue.replace(':', '-', 2).find(":")+1:prevalue.replace(':', '-', 3).find(":")]
+                attr = prevalue[prevalue.replace(':', '-', 3).find(":")+1:]
 
                 try:
                     indices1 = [int(i) for i in indices1]
@@ -242,7 +243,10 @@ class Crawler:
                 r = xpathTree.xpath(xp)
 
                 if r:
-                    postvalue = r[0].text
+                    if attr:
+                        postvalue = r[0].attrib[attr]
+                    else:
+                        postvalue = (r[0].text + ''.join([str(etree.tostring(e).decode()) for e in r[0]])).strip()
                 else:
                     postvalue = ''
 
