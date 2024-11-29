@@ -69,11 +69,11 @@ Example of a structure of a dataset that can be used for crawling:
 > _The directions X, Y, Z, … have no relation in this specific case_
 > _Instead, plane labels are used. To prevent confusion, they are written with {}_
 
-``dataset extract mydataset[“CRAWL_PARAMS“][][] —-out=myextracteddata.csv``
+``dataset extract mydataset[“CRAWL_PARAMS“][][] —-out=myextracteddata.json``
 
 ![Tensor set 1](docs/tensor_example1.png)
 
-``dataset extract mydataset[“CRAWL_ARGS“][][] —-out=myextracteddata.csv``
+``dataset extract mydataset[“CRAWL_ARGS“][][] —-out=myextracteddata.json``
 
 ![Tensor set 2](docs/tensor_example2.png)
 
