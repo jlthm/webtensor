@@ -224,8 +224,8 @@ The function of the keyword or keyletter in front of the actual value determines
   r (regular expression) calls a regex-search-group operation on a previous cell (absolute distance) and writes it to itself
 - ``p:r/a:[a,b,c]:[x,y,z]:[regex]``
   p (projection) Applies regex on a cell [a, b, c] and writes it to [x,y,z]
-- ``x:r/a:[a,b,c]:[path]``
-  x (xpath) Applies xpath on a cell [a, b, c] and writes it to itself
+- ``x:r/a:[a,b,c]:[path]:[attribute]``
+  x (xpath) Applies xpath on a cell [a, b, c] and writes it to itself. If the attribute is empty, innerHTML will be returned.
 - ``d:[%d-%m-%Y]``
   d (date) stores the current date in the given format
 - ``o:r/a:[a,b,c]``
