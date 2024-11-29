@@ -47,8 +47,9 @@ class CMgr:
                 args_dict["oc"] = a
                 continue
             if not "=" in a:
-                return False
-            args_dict[a.split("=")[0].replace("--", "")] = a.split("=")[1]
+                args_dict[a.replace("--", "")] = ''
+            else:
+                args_dict[a.split("=")[0].replace("--", "")] = a.split("=")[1]
         return args_dict
     
     def help(self, args) -> list:
@@ -435,7 +436,12 @@ class CMgr:
             return [[self._as_color("No such dataset.", color="red")]]
 
         crawler = Crawler(dataset=self._datasets[pargs["oc"]])
-        resp = crawler.execute()
+
+        if "debug" in pargs:
+            resp = crawler.execute(debug=True)
+        else:
+            resp = crawler.execute(debug=False)
+
         if not resp:
             return [[self._as_color("Crawling failed.", color="red")]]
         else:
