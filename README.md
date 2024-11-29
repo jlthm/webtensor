@@ -168,6 +168,7 @@ There are multiple uncommon behaviors, that need to be mentioned in order to und
 __Crawl with__ a dataset:
 
     crawlwith mydataset
+    crawlwith mydataset --debug
 
 ### Workflow:
 
@@ -220,10 +221,12 @@ The function of the keyword or keyletter in front of the actual value determines
 - ``r:r:[a,b,c]:[regex]``
   r (regular expression) calls a regex-search-group operation on a previous cell (relative distance)
 - ``r:a:[a,b,c]:[regex]``
-  r (regular expression) calls a regex-search-group operation on a previous cell (relative distance)
+  r (regular expression) calls a regex-search-group operation on a previous cell (absolute distance) and writes it to itself
+- ``p:r/a:[a,b,c]:[x,y,z]:[regex]``
+  p (projection) Applies regex on a cell [a, b, c] and writes it to [x,y,z]
+- ``x:r/a:[a,b,c]:[path]``
+  x (xpath) Applies xpath on a cell [a, b, c] and writes it to itself
 - ``d:[%d-%m-%Y]``
   d (date) stores the current date in the given format
 - ``o:r/a:[a,b,c]``
   o (out) writes a specific value at runtime to the console
-- ``p:r/a:[a,b,c]:[x,y,z]:[regex]``
-  p (projection) Applies regex on a cell [a, b, c] and writes it to [x,y,z]
