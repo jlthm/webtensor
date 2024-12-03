@@ -3,7 +3,7 @@
 The use of this module may look complicated at first, but let me assure you:
 The mechanism is simple and the tool very powerful.
 
-## 1) Datasets (Tensor notation and manipulation)
+## 1. Datasets (Console notation and manipulation)
 
 ### All console commands (to be extended):
 
@@ -159,7 +159,7 @@ There are multiple uncommon behaviors, that need to be mentioned in order to und
 ``tensor[1][][]``
 	Is an invalid notation in python and will raise a syntax error.
 
-## 2) Crawler workflow and cell notation
+## 2. Crawler workflow and cell notation
 
 ### Commands:
 
@@ -230,3 +230,63 @@ The function of the keyword or keyletter in front of the actual value determines
   d (date) stores the current date in the given format
 - ``o:r/a:[a,b,c]``
   o (out) writes a specific value at runtime to the console
+
+
+## 3. Python 'dataset' datatype
+
+> _As there are a lot of modules called 'tensor', and tensors are in fact multidimensional arrays,
+the name of this module will be 'dataset'. Not every feature has been implemented yet. See future
+releases for full capability and increased speed._
+
+__Python code example:__
+
+	from dataset import Dataset
+
+	d = Dataset()
+	d2 = Dataset(zero=True)
+
+	# -----------
+
+	d[1][0][1] = 'my text here'
+	d2[1][0][1] = d[1][0][1]
+
+	print(d[1][0][1])
+	>>> 'my text here'
+
+	print(d[1][1][1])
+	>>> ValueError
+
+	print(d2[1][1][1])
+	>>> 0
+
+	# ----------
+
+	d[1][-1][-1] = 'PL1'
+	d[1][any][any] = 'PL1'
+	print(d['PL'][0][1])
+	>>> 'my text here'
+
+	d[4][any][any] = [[1, 2, 3], [4, 5, 6]]
+
+	print(d[4][any][any])
+	>>> [[1, 2, 3], [4, 5, 6]]
+
+	d[1][2][any] = 'EL1'
+	d[1][2][any] = [1, 2, 3, 4]
+	
+	print(d[1][2][3])
+	>>> 4
+
+	print(d[1][2][any])
+	>>> [1, 2, 3, 4]
+
+	# -----------
+
+	d[1][2][0:3] = [9, 8, 7]
+
+	print(d[1][2][1:4])
+	>>> [8, 7, 4]
+
+
+
+
