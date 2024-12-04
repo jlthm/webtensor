@@ -304,6 +304,13 @@ Iterate through a dataset (The values do not coincide with previous code):
 		print('{k}, ', end='')
 	>>> 1, 2, 3, 4
 
+Invalid operations:
 
+	d[][2][4]
+	>>> SyntaxError
 
+	d[3][3]
+	>>> MethodNotAllowed
 
+	d()
+	>>> MethodNotAllowed
