@@ -3,7 +3,7 @@
 The use of this module may look complicated at first, but let me assure you:
 The mechanism is simple and the tool very powerful.
 
-## 1. Datasets (Console notation and manipulation)
+## Part 1: Datasets (Console notation and manipulation)
 
 ### All console commands (to be extended):
 
@@ -133,7 +133,7 @@ As mentioned before, data is stored in index notation (mainly for computation sp
 	]
 
 
-## 2. Crawler workflow and cell notation
+## Part 2: Crawler workflow and cell notation
 
 ### Commands:
 
@@ -206,7 +206,7 @@ The function of the keyword or keyletter in front of the actual value determines
   o (out) writes a specific value at runtime to the console
 
 
-## 3. Using datasets in raw python
+## Part 3: Using datasets in raw python
 
 > _As there are a lot of modules called 'tensor', and tensors are in fact multidimensional arrays,
 the name of this module will be 'dataset'. Not every feature has been implemented yet. See future
@@ -221,7 +221,7 @@ Import requirements and create a dataset object:
 	d = Dataset()
 	d0 = Dataset(zero=True)
 
-Set a value to a cell / Read a cell with numeric indices
+Set a value to a cell / Read a cell with numeric indices:
 
 	d[1][0][1] = 'my text here'
 	d0[1][0][1] = d[1][0][1]
@@ -235,10 +235,15 @@ Set a value to a cell / Read a cell with numeric indices
 	print(d0[1][1][1])
 	>>> 0
 
-Extract list-in-list arrays from a dataset
+Set data with lists-in-lists:
 
-	print(d[any][any][any])
-	print(d.extract())
+	d[4][any][any] = [[1, 2, 3], [4, 5, 6]]
+
+	d[1][2][any] = [1, 2, 3, 4]
+
+Extract list-in-list arrays from a dataset:
+
+	print(d[any][any][any]) # or print(d.extract())
 	>>> [[[0, ...],...], [[0, ...], ...], ... ]
 
 	print(d[1][2][any])
@@ -247,13 +252,8 @@ Extract list-in-list arrays from a dataset
 	print(d[4][any][any])
 	>>> [[1, 2, 3], [4, 5, 6]]
 
-	# Set data as lower dimensional array
-	d[4][any][any] = [[1, 2, 3], [4, 5, 6]]
-
-	d[1][2][any] = [1, 2, 3, 4]	
-
-
-Set values/labels to a cell/read cells with..
+For the following to understand, see [Dataset structure](dataset-structure):
+Set values/labels to a cell/read cells with...
 
 	# ... edge labels (EL)
 
@@ -264,20 +264,21 @@ Set values/labels to a cell/read cells with..
 	>>> 'my text here'
 
 	# ...  plane labels (PL)
+
 	d[1][2][any] = 'PL1'
 	d[1][2][-1] = 'PL1'
 
-	d[1]['PL'][5] = 3
-	d['PL'][2][5] = 3
+	d[1]['PL'][2] = 3
+	d['PL'][2][2] = 3
 
-Extract sliced data
+Extract/Set sliced data (The values do not coincide with previous code):
 
 	d[1][2][0:3] = [9, 8, 7]
 
 	print(d[1][2][1:4])
 	>>> [8, 7, 4]
 
-Get dataset size
+Get dataset measures (The values do not coincide with previous code):
 	
 	len(d)
 	>>> [3, 4, 5]
@@ -288,15 +289,15 @@ Get dataset size
 	len(d[3][any][any])
 	>>> [1, 2]
 	
-Iterate through a dataset
+Iterate through a dataset (The values do not coincide with previous code):
 
 	for x, y, z in d:
 		print("{x}, {y}, {z}, ".format(), end='')
-	>>> [0, 0, 0] [0, 0, 1] ...
+	>>> ['my text here', 0, 0] [3, 0, 1] ...
 
 	for a, b in d[1][any][any]:
 		print("[{a}, {b}], ".format(), end='')
-	>>> [0, 0] [0, 1] ...
+	>>> ['text', 'another text'] [0, 1] ...
 
 	for k in d[1][1][any]:
 		print('{k}, ', end='')
