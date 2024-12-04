@@ -132,32 +132,6 @@ As mentioned before, data is stored in index notation (mainly for computation sp
 	  [2, 0, 0, "s:example_cookie_value"]
 	]
 
-### Special behavior of tensors in raw python:
-
----
-
-There are multiple uncommon behaviors, that need to be mentioned in order to understand these tensors well.
-
-``tensor[2][[‘data‘]][3]``
-	If ‘data‘ is not a plane label yet, a plane label will be created, as long as there are enough free ones. This behavior is similar to dict-objects.
-
-``len(tensor)``
-	Gives back a list object [1, 7, 4] with the number of instances in each direction.
-
-``tensor[3][None][None]``
-	Gives back a LIST object (!) in form of a matrix (list in lists). This has the effect, that it can be converted more easily into csv and other common data formats.
-
-``tensor[3][4][-1]``
-	Gives back a plane LABEL.
-
-``tensor[1][3][25] = 'value'``
-	Extends a [1,1,1] tensor to a size of [1,3,25].
-
-``tensor[1][3]``
-	Is an invalid notation and will raise an error. Notation like that may be possible in a future update.
-
-``tensor[1][][]``
-	Is an invalid notation in python and will raise a syntax error.
 
 ## 2. Crawler workflow and cell notation
 
@@ -232,7 +206,7 @@ The function of the keyword or keyletter in front of the actual value determines
   o (out) writes a specific value at runtime to the console
 
 
-## 3. Python 'dataset' datatype
+## 3. Using datasets in raw python
 
 > _As there are a lot of modules called 'tensor', and tensors are in fact multidimensional arrays,
 the name of this module will be 'dataset'. Not every feature has been implemented yet. See future
@@ -240,14 +214,14 @@ releases for full capability and increased speed._
 
 __Python code example:__
 
+Import requirements and create a dataset object:
+
 	from dataset import Dataset
 
 	d = Dataset()
 	d0 = Dataset(zero=True)
 
-
-	# -----------
-	# Set a value to a cell/Read a cell  with numeric indices
+Set a value to a cell / Read a cell with numeric indices
 
 	d[1][0][1] = 'my text here'
 	d0[1][0][1] = d[1][0][1]
@@ -261,9 +235,7 @@ __Python code example:__
 	print(d0[1][1][1])
 	>>> 0
 
-
-	# ----------
-	# Extract list-in-list arrays from a dataset
+Extract list-in-list arrays from a dataset
 
 	print(d[any][any][any])
 	print(d.extract())
@@ -281,8 +253,8 @@ __Python code example:__
 	d[1][2][any] = [1, 2, 3, 4]	
 
 
-	# ----------	
-	# Set values/labels to a cell/read cells with..
+Set values/labels to a cell/read cells with..
+
 	# ... edge labels (EL)
 
 	d[1][-1][-1] = 'EL1'
@@ -298,18 +270,14 @@ __Python code example:__
 	d[1]['PL'][5] = 3
 	d['PL'][2][5] = 3
 
-
-	# -----------
-	# Extract sliced data
+Extract sliced data
 
 	d[1][2][0:3] = [9, 8, 7]
 
 	print(d[1][2][1:4])
 	>>> [8, 7, 4]
 
-
-	# ------------
-	# Get dataset size
+Get dataset size
 	
 	len(d)
 	>>> [3, 4, 5]
@@ -320,9 +288,7 @@ __Python code example:__
 	len(d[3][any][any])
 	>>> [1, 2]
 	
-
-	# ------------
-	# Iterate through a dataset
+Iterate through a dataset
 
 	for x, y, z in d:
 		print("{x}, {y}, {z}, ".format(), end='')
