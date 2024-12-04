@@ -252,7 +252,8 @@ Extract list-in-list arrays from a dataset:
 	print(d[4][any][any])
 	>>> [[1, 2, 3], [4, 5, 6]]
 
-For the following to understand, see [Dataset structure](dataset-structure):
+For the following to understand, see [Dataset structure](#dataset-structure):
+.
 Set values/labels to a cell/read cells with...
 
 	# ... edge labels (EL)
