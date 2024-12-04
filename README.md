@@ -301,7 +301,7 @@ Iterate through a dataset (The values do not coincide with previous code):
 	>>> ['text', 'another text'] [0, 1] ...
 
 	for k in d[1][1][any]:
-		print('{k}, ', end='')
+		print('{k}, '.format(), end='')
 	>>> 1, 2, 3, 4
 
 Invalid operations:
