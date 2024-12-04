@@ -243,12 +243,14 @@ __Python code example:__
 	from dataset import Dataset
 
 	d = Dataset()
-	d2 = Dataset(zero=True)
+	d0 = Dataset(zero=True)
+
 
 	# -----------
+	# Set a value to a cell/Read a cell  with numeric indices
 
 	d[1][0][1] = 'my text here'
-	d2[1][0][1] = d[1][0][1]
+	d0[1][0][1] = d[1][0][1]
 
 	print(d[1][0][1])
 	>>> 'my text here'
@@ -256,36 +258,83 @@ __Python code example:__
 	print(d[1][1][1])
 	>>> ValueError
 
-	print(d2[1][1][1])
+	print(d0[1][1][1])
 	>>> 0
 
+
 	# ----------
+	# Extract list-in-list arrays from a dataset
 
-	d[1][-1][-1] = 'PL1'
-	d[1][any][any] = 'PL1'
-	print(d['PL'][0][1])
-	>>> 'my text here'
-
-	d[4][any][any] = [[1, 2, 3], [4, 5, 6]]
-
-	print(d[4][any][any])
-	>>> [[1, 2, 3], [4, 5, 6]]
-
-	d[1][2][any] = 'EL1'
-	d[1][2][any] = [1, 2, 3, 4]
-	
-	print(d[1][2][3])
-	>>> 4
+	print(d[any][any][any])
+	print(d.extract())
+	>>> [[[0, ...],...], [[0, ...], ...], ... ]
 
 	print(d[1][2][any])
 	>>> [1, 2, 3, 4]
 
+	print(d[4][any][any])
+	>>> [[1, 2, 3], [4, 5, 6]]
+
+	# Set data as lower dimensional array
+	d[4][any][any] = [[1, 2, 3], [4, 5, 6]]
+
+	d[1][2][any] = [1, 2, 3, 4]	
+
+
+	# ----------	
+	# Set values/labels to a cell/read cells with..
+	# ... edge labels (EL)
+
+	d[1][-1][-1] = 'EL1'
+	d[1][any][any] = 'EL1'
+
+	print(d['EL1'][0][1])
+	>>> 'my text here'
+
+	# ...  plane labels (PL)
+	d[1][2][any] = 'PL1'
+	d[1][2][-1] = 'PL1'
+
+	d[1]['PL'][5] = 3
+	d['PL'][2][5] = 3
+
+
 	# -----------
+	# Extract sliced data
 
 	d[1][2][0:3] = [9, 8, 7]
 
 	print(d[1][2][1:4])
 	>>> [8, 7, 4]
+
+
+	# ------------
+	# Get dataset size
+	
+	len(d)
+	>>> [3, 4, 5]
+
+	len(d[3][None][2])
+	>>> 2
+
+	len(d[3][any][any])
+	>>> [1, 2]
+	
+
+	# ------------
+	# Iterate through a dataset
+
+	for x, y, z in d:
+		print("{x}, {y}, {z}, ".format(), end='')
+	>>> [0, 0, 0] [0, 0, 1] ...
+
+	for a, b in d[1][any][any]:
+		print("[{a}, {b}], ".format(), end='')
+	>>> [0, 0] [0, 1] ...
+
+	for k in d[1][1][any]:
+		print('{k}, ', end='')
+	>>> 1, 2, 3, 4
 
 
 
